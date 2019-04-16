@@ -11,6 +11,7 @@ import com.pinyougou.sellergoods.service.SellerService;
 import entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,7 +48,9 @@ public class SellerServiceImpl implements SellerService {
 	 */
 	@Override
 	public void add(TbSeller seller) {
-		sellerMapper.insert(seller);		
+		seller.setStatus("0");//状态
+		seller.setCreateTime(new Date());//申请日期
+		sellerMapper.insert(seller);
 	}
 
 	
@@ -77,6 +80,14 @@ public class SellerServiceImpl implements SellerService {
 		for(String id:ids){
 			sellerMapper.deleteByPrimaryKey(id);
 		}		
+	}
+
+	@Override
+	public void updateStatus(String sellerId, String status) {
+
+		TbSeller seller = sellerMapper.selectByPrimaryKey(sellerId);
+		seller.setStatus(status);
+		sellerMapper.updateByPrimaryKey(seller);
 	}
 	
 	
