@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定初始化</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app   ng-init="myname='陈大海'">
+请输入你的姓名：<input ng-model="myname">
+<br>
+<input ng-model="myname">
+{{myname}}已经{{100+100}}岁啦
+</body>
+
+</html>
