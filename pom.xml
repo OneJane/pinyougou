@@ -20,6 +20,10 @@
         <module>pinyougou-shop-web</module>
         <module>springsecuritydemo</module>
         <module>fastDFSdemo</module>
+        <module>pinyougou-content-interface</module>
+        <module>pinyougou-content-service</module>
+        <module>pinyougou-portal-web</module>
+        <module>SpringDataRedisDemo</module>
     </modules>
 
     <!-- 集中定义依赖版本号 -->
